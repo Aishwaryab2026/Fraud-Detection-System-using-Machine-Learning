@@ -23,6 +23,52 @@ Financial fraud continues to evolve with the rapid growth of digital transaction
 Two anomaly detection techniques—**Isolation Forest** and **Autoencoder Neural Network**—were implemented and compared to detect suspicious transaction patterns. The project demonstrates how machine learning can assist financial institutions in identifying potential fraud, minimizing financial risk, and strengthening fraud monitoring systems.
 
 ---
+## 📊 About the Dataset
+
+This dataset contains **1,000 financial transaction records** with **12 features** describing transaction behavior, customer demographics, and account information. It is designed for **transaction analysis, anomaly detection, fraud detection, and exploratory data analysis (EDA)** using machine learning and data visualization techniques.
+
+The dataset combines transactional, temporal, and customer-related attributes, making it suitable for identifying unusual transaction patterns and building predictive analytics models.
+
+| Column Name | Description |
+|-------------|-------------|
+| **Transaction_ID** | Unique identifier assigned to each transaction. |
+| **Transaction_Amount** | Monetary value of the transaction. |
+| **Transaction_Volume** | Number or volume of transactions associated with the customer or account. |
+| **Average_Transaction_Amount** | Average transaction amount for the customer over a period of time. |
+| **Frequency_of_Transactions** | Number of transactions performed within a specific timeframe. |
+| **Time_Since_Last_Transaction** | Time elapsed since the customer's previous transaction. |
+| **Day_of_Week** | Day on which the transaction occurred. |
+| **Time_of_Day** | Time period during which the transaction took place (Morning, Afternoon, Evening, or Night). |
+| **Age** | Age of the customer. |
+| **Gender** | Gender of the customer. |
+| **Income** | Annual income of the customer. |
+| **Account_Type** | Type of bank account associated with the transaction (e.g., Savings or Current). |
+---
+## 🗂 Dataset Schema
+
+```mermaid
+graph TD
+    A[Transaction Dataset]
+
+    A --> B[Transaction Details]
+    A --> C[Customer Details]
+    A --> D[Time Details]
+
+    B --> B1[Transaction_ID]
+    B --> B2[Transaction_Amount]
+    B --> B3[Transaction_Volume]
+    B --> B4[Average_Transaction_Amount]
+    B --> B5[Frequency_of_Transactions]
+    B --> B6[Account_Type]
+
+    C --> C1[Age]
+    C --> C2[Gender]
+    C --> C3[Income]
+
+    D --> D1[Day_of_Week]
+    D --> D2[Time_of_Day]
+    D --> D3[Time_Since_Last_Transaction]
+```
 
 # 🎯 Business Problem
 
