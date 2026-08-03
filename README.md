@@ -148,6 +148,36 @@ Anomaly scores produced by both models were analyzed using statistical threshold
 
 Since the dataset contained no labeled fraud records, model performance was evaluated using anomaly score distributions, statistical thresholds, and visual analysis instead of traditional classification metrics. Comparing the outputs of both models helped assess their consistency and reliability in detecting anomalous transactions.
 
+## Model Comparison
+
+To evaluate the effectiveness of both anomaly detection techniques, the results of the Isolation Forest and Autoencoder models were compared.
+
+| Model | Mean | Standard Deviation | Threshold | Total Anomalies |
+|-------|------:|-------------------:|----------:|----------------:|
+| Isolation Forest | 0.462 | 0.058 | 0.5776 | 45 |
+| Autoencoder | 719,290 | 374,665 | 1,468,620 | 20 |
+
+### Interpretation
+
+The Isolation Forest model identified **45 anomalous transactions**, whereas the Autoencoder detected **20 highly suspicious transactions**.
+
+This difference is expected because both models detect anomalies using different approaches:
+
+- **Isolation Forest** isolates observations that are different from the majority of the dataset. As a result, it detects a larger number of potential anomalies, including both moderate and extreme outliers.
+
+- **Autoencoder** learns the normal transaction patterns during training. Transactions with high reconstruction error are considered anomalies, making it more selective and focused on the most unusual transactions.
+
+Interestingly, the anomalies detected by the Autoencoder were also present among those identified by the Isolation Forest. This indicates that the Autoencoder primarily captured the most critical anomalies, while the Isolation Forest identified a broader range of suspicious transactions.
+
+### Conclusion
+
+Both models performed well for unsupervised fraud detection, but they serve slightly different purposes:
+
+- **Isolation Forest** is suitable when the goal is to identify a wider set of suspicious transactions for further investigation.
+- **Autoencoder** is more conservative and effective at identifying the most significant anomalies with higher confidence.
+
+Using both models together provides a more comprehensive fraud detection strategy, where Isolation Forest offers broader coverage and the Autoencoder helps prioritize the most critical cases.
+
 ---
 
 # 🏁 Conclusion
